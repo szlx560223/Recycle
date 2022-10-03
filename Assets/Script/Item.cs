@@ -6,21 +6,23 @@ public class Item : MonoBehaviour
 
     public String itemName = "";
     public ItemType itemType = ItemType.Other;
-    public String itemTextureName;
 
     void Start()
     {
-        setTexture();
+        if (!setTexture()) Debug.Log(itemName + "texture load failed");
     }
     /// <summary>
-    /// 设置物品贴图，暂时没有用处与实现
+    /// 设置物品贴图
     /// </summary>
-    /// <returns></returns>
+    /// <returns>是否加载成功</returns>
     private bool setTexture()
     {
-/*        String path = itemName;
-        Resources.Load(path);
-        GetComponent<SpriteRenderer>();*/
+        string path = "Texture/Item/"+itemName;
+        Sprite texture = Resources.Load(path,typeof(Sprite)) as Sprite;
+        
+        SpriteRenderer render = GetComponent<SpriteRenderer>();
+        if (texture == null||render == null) return false;
+        render.sprite = texture;
         return true;
     }
     /// <summary>
@@ -43,7 +45,7 @@ public class Item : MonoBehaviour
     /// 返回物品信息元组
     /// </summary>
     /// <returns>前一个是名字，后一个是类型</returns>
-    public (String,ItemType) getInfo()
+    public (String,ItemType) GetInfo()
     {
         return (itemName,itemType);
     }
