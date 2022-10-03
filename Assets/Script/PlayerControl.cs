@@ -1,20 +1,23 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerControl : MonoBehaviour
 {
     Rigidbody2D rb;
     Vector2 movement = new Vector2(0, 0);
+    public static PlayerControl instance;
     public int speed = 0;
     void Start()
     {
+        instance = this;
         rb = GetComponent<Rigidbody2D>();
     }
     void Update()
     {
         PlayerMoveByButtom();
     }
+    /// <summary>
+    /// 玩家360°移动
+    /// </summary>
     void PlayerMoveByAxis()
     {
         //获取输入
@@ -41,7 +44,9 @@ public class PlayerControl : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
-
+    /// <summary>
+    /// 玩家八个方向移动移动
+    /// </summary>
     void PlayerMoveByButtom()
     {
         movement = Vector2.zero;
@@ -57,4 +62,6 @@ public class PlayerControl : MonoBehaviour
 
 
     }
+
 }
+
