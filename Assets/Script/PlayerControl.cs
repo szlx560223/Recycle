@@ -6,6 +6,8 @@ public class PlayerControl : MonoBehaviour
     Vector2 movement = new Vector2(0, 0);
     public static PlayerControl instance;
     public int speed = 0;
+    private bool isBusy = false;
+    private GameObject target = null;
     void Start()
     {
         instance = this;
@@ -14,6 +16,7 @@ public class PlayerControl : MonoBehaviour
     void Update()
     {
         PlayerMoveByButtom();
+        InteractWithNPC();
     }
     /// <summary>
     /// 玩家360°移动
@@ -61,6 +64,53 @@ public class PlayerControl : MonoBehaviour
         rb.velocity = movement;
 
 
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Item":
+                PlayerBackpack.instacne.AddToBackpack(other.gameObject);
+                break;
+            case "NPC":
+                if (!isBusy)
+                {
+                    isBusy = true;
+                    other.gameObject.transform.GetChild(0).gameObject.SetActive(true);
+                    Debug.Log("Hit " + other.gameObject.name);
+                    target = other.gameObject;
+                }
+                break;
+            default:
+                Debug.Log("Unkown trigger");
+                break;
+        }
+    }
+    void OnTriggerExit2D(Collider2D other)
+    {
+        switch (other.gameObject.tag)
+        {
+            case "Item":
+                break;
+            case "NPC":
+                isBusy = false;
+                other.gameObject.transform.GetChild(0).gameObject.SetActive(false);
+                Debug.Log("Leave " + other.gameObject.name);
+                target = null;
+
+                break;
+            default:
+                Debug.Log("Unkown trigger");
+                break;
+        }
+    }
+    void InteractWithNPC()
+    {
+        if (Input.GetKeyDown(KeyCode.E) && target != null)
+        {
+            target.GetComponent<NPCControl>().InteractActivity();
+        }
     }
 
 }

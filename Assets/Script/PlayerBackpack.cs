@@ -20,33 +20,31 @@ public class PlayerBackpack : MonoBehaviour
         for (int i = 0; i < maxItem; i++)
             allSlots[i]=backpackGUI.GetChild(i);
     }
-
-    void OnTriggerEnter2D(Collider2D other)
+/// <summary>
+/// 向背包里添加物体
+/// </summary>
+/// <param name="other">被添加的物体</param>
+/// <returns>是否添加成功</returns>
+    public bool AddToBackpack(GameObject other)
     {
-        switch (other.gameObject.tag)
-        {
-            case "Item":
-                AddToBackpack(other);
-                break;
-            default:
-                Debug.Log("Unkown trigger");
-                break;
-        }
-    }
-    public void AddToBackpack(Collider2D other)
-    {
-        if (backpackItem.Count >= maxItem) return;
-        (String, ItemType) info = other.gameObject.GetComponent<Item>().GetInfo();
+        if (backpackItem.Count >= maxItem) return false;
+        (String, ItemType) info = other.GetComponent<Item>().GetInfo();
         backpackItem.Add(info);//加入到背包列表
-        other.gameObject.SetActive(false);
+        other.SetActive(false);
         allSlots[backpackItem.Count-1].gameObject.GetComponent<Image>().sprite = Resources.Load("Texture/Item/" + backpackItem[backpackItem.Count - 1].Item1, typeof(Sprite)) as Sprite;
+        return true;
     }
-    public void RemoveFromBackpack()
+/// <summary>
+/// 从背包里移除物品
+/// </summary>
+/// <returns>被移除的物品，没有则返回Null</returns>
+    public (String,ItemType) RemoveFromBackpack()
     {
-        if (backpackItem.Count == 0) return;
+        if (backpackItem.Count == 0) return("Null",ItemType.Null);
         allSlots[backpackItem.Count - 1].gameObject.GetComponent<Image>().sprite = Resources.Load("Texture/Item/Empty", typeof(Sprite)) as Sprite;
+        (String, ItemType) info = backpackItem[backpackItem.Count - 1];
         backpackItem.RemoveAt(backpackItem.Count - 1);
-        
+        return info;
     }
     
 }

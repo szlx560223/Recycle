@@ -59,6 +59,7 @@ public class Item : MonoBehaviour
 /// </summary>
 public enum ItemType
 {
+    Null = 0,
     Recyclable = 1,
     Kitchen = 2,
     Hazardous = 3,
