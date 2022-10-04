@@ -1847,12 +1847,12 @@ PrefabInstance:
     - target: {fileID: 6701104044914420974, guid: c3061de2db40319419e9e29d378fe243,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 6701104044914420974, guid: c3061de2db40319419e9e29d378fe243,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c3061de2db40319419e9e29d378fe243, type: 3}
@@ -1936,6 +1936,11 @@ PrefabInstance:
     - target: {fileID: 7117021096796779724, guid: 610fb7f6c729a914e9502f972590db99,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7117021096796779724, guid: 610fb7f6c729a914e9502f972590db99,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []

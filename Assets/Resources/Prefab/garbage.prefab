@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30171d6657965af48a4d39e1d557595f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: "\u7EB8\u5F20"
+  itemName: red
   itemType: 1
 --- !u!58 &6375598135532894532
 CircleCollider2D:
