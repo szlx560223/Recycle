@@ -87,7 +87,8 @@ public class PlayerControl : MonoBehaviour
             case "Item":
                 PlayerBackpack.instacne.AddToBackpack(other.gameObject);
                 break;
-            case "NPC":
+            case "Bin":
+            case "Aunt":
                 if (!isBusy)
                 {
                     isBusy = true;
@@ -95,9 +96,6 @@ public class PlayerControl : MonoBehaviour
                     Debug.Log("Hit " + other.gameObject.name);
                     target = other.gameObject;
                 }
-                break;
-            default:
-                Debug.Log("Unkown trigger");
                 break;
         }
     }
@@ -107,15 +105,14 @@ public class PlayerControl : MonoBehaviour
         {
             case "Item":
                 break;
-            case "NPC":
+            case "Bin":
+            case "Aunt":
                 isBusy = false;
                 other.gameObject.transform.GetChild(0).gameObject.SetActive(false);
                 Debug.Log("Leave " + other.gameObject.name);
-                target = null;
+                if (target == other.gameObject)
+                    target = null;
 
-                break;
-            default:
-                Debug.Log("Unkown trigger");
                 break;
         }
     }
@@ -123,7 +120,15 @@ public class PlayerControl : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && target != null)
         {
-            target.GetComponent<NPCControl>().InteractActivity();
+            switch (target.tag)
+            {
+                case "Aunt":
+                    target.GetComponent<Aunt>().InteractActivity();
+                    break;
+                case "Bin":
+                    target.GetComponent<RubbishBin>().InteractActivity();
+                    break;
+            }
         }
     }
 
