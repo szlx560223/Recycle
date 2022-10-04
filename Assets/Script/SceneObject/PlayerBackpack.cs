@@ -6,7 +6,7 @@ using UnityEngine.UI;
 ///<summary>物品栏的最大数量</summary>
 public class PlayerBackpack : MonoBehaviour
 {
-    private int maxItem = 5;
+    private int maxItem = 4;
     List<(String, ItemType)> backpackItem = new List<(String,ItemType)>();
     public static PlayerBackpack instacne;
     [Header("物品栏的父节点")]
