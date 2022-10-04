@@ -5,15 +5,32 @@ public class PlayerControl : MonoBehaviour
     Rigidbody2D rb;
     Animator animator;
     Vector2 movement = new Vector2(0, 0);
+    public GameObject endMenu;
     public static PlayerControl instance;
     public int speed = 0;
     private bool isBusy = false;
     private GameObject target = null;
+    public int itemCount = 3;
+    private int _pickedGarbageCount;
+    public int pickedGarbageCount
+    {
+        get
+        {
+            return _pickedGarbageCount;
+        }
+        set
+        {
+            _pickedGarbageCount = value;
+            isGameEnd();
+        }
+    }
+    
     void Start()
     {
         instance = this;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        pickedGarbageCount = 0;
     }
     void Update()
     {
@@ -130,6 +147,17 @@ public class PlayerControl : MonoBehaviour
                     break;
             }
         }
+    }
+    bool isGameEnd()
+    {
+        if (pickedGarbageCount == itemCount)
+        {
+            endMenu.SetActive(true);
+            Time.timeScale = 0;
+            return true;
+        }
+        
+        return false;
     }
 
 }

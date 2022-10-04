@@ -36,10 +36,11 @@ public class RubbishBin : NPCControl
     {
         PlayerBackpack.instacne.RemoveFromBackpack();
         Debug.Log("Throw a correct garbage");
+        PlayerControl.instance.pickedGarbageCount++;
     }
     public void ThrowWrongRubbish()
     {
-
+        Debug.Log("Throw a wrong garbage");
     }
     public bool isItemTypeMatch(ItemType itemType)
     {

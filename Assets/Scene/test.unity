@@ -1712,12 +1712,12 @@ PrefabInstance:
     - target: {fileID: 4630948780305734666, guid: fd61d1d5282129e4aa0951343967e432,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 42.7
+      value: -4.11
       objectReference: {fileID: 0}
     - target: {fileID: 4630948780305734666, guid: fd61d1d5282129e4aa0951343967e432,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -57.93
+      value: -9.1
       objectReference: {fileID: 0}
     - target: {fileID: 4630948780305734666, guid: fd61d1d5282129e4aa0951343967e432,
         type: 3}
@@ -1920,9 +1920,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7117021096796779714, guid: 610fb7f6c729a914e9502f972590db99,
         type: 3}
+      propertyPath: item.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7117021096796779714, guid: 610fb7f6c729a914e9502f972590db99,
+        type: 3}
       propertyPath: backpackGUI
       value: 
       objectReference: {fileID: 693812780}
+    - target: {fileID: 7117021096796779715, guid: 610fb7f6c729a914e9502f972590db99,
+        type: 3}
+      propertyPath: endMenu
+      value: 
+      objectReference: {fileID: 1293184706}
     - target: {fileID: 7117021096796779724, guid: 610fb7f6c729a914e9502f972590db99,
         type: 3}
       propertyPath: m_Name

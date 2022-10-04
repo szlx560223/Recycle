@@ -27,11 +27,12 @@ public class PlayerBackpack : MonoBehaviour
     /// <returns>是否添加成功</returns>
     public bool AddToBackpack(GameObject other)
     {
-        if (backpackItem.Count >= maxItem) return false;
+        if (isBackpackFull()) return false;
         (String, ItemType) info = other.GetComponent<Item>().GetInfo();
         backpackItem.Add(info);//加入到背包列表
         other.SetActive(false);
         allSlots[backpackItem.Count-1].gameObject.GetComponent<Image>().sprite = Resources.Load("Texture/Item/" + backpackItem[backpackItem.Count - 1].Item1, typeof(Sprite)) as Sprite;
+        Debug.Log(backpackItem);
         return true;
     }
     /// <summary>
@@ -41,9 +42,14 @@ public class PlayerBackpack : MonoBehaviour
     public (String,ItemType) RemoveFromBackpack()
     {
         if (isBackpackEmpty()) return("Null",ItemType.Null);
+        for(int i = 0; i < backpackItem.Count-1; i++)
+        {
+            allSlots[i].gameObject.GetComponent<Image>().sprite = allSlots[i + 1].gameObject.GetComponent<Image>().sprite;
+        }
         allSlots[backpackItem.Count - 1].gameObject.GetComponent<Image>().sprite = Resources.Load("Texture/Item/Empty", typeof(Sprite)) as Sprite;
         (String, ItemType) info = getFirstInBackpack();
-        backpackItem.RemoveAt(backpackItem.Count - 1);
+        backpackItem.RemoveAt(0);
+        Debug.Log(backpackItem);
         return info;
     }
     /// <summary>
@@ -71,7 +77,7 @@ public class PlayerBackpack : MonoBehaviour
     public (String, ItemType) getFirstInBackpack()
     {
         if(isBackpackEmpty()) return ("Null", ItemType.Null);
-        return backpackItem[backpackItem.Count-1];
+        return backpackItem[0];
     }
 
 
