@@ -3,6 +3,7 @@
 public class PlayerControl : MonoBehaviour
 {
     Rigidbody2D rb;
+    Animator animator;
     Vector2 movement = new Vector2(0, 0);
     public static PlayerControl instance;
     public int speed = 0;
@@ -12,14 +13,15 @@ public class PlayerControl : MonoBehaviour
     {
         instance = this;
         rb = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
     void Update()
     {
         PlayerMoveByButtom();
-        InteractWithNPC();
+        InteractWithObject();
     }
     /// <summary>
-    /// 玩家360°移动
+    /// 玩家360°移动，不顺滑，不建议使用
     /// </summary>
     void PlayerMoveByAxis()
     {
@@ -34,7 +36,8 @@ public class PlayerControl : MonoBehaviour
         }
         if(Input.GetKey(KeyCode.W)|| Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S))
         {
-            rb.velocity = movement * speed;//获取输入，如果有输入就正常
+            movement*=speed;
+            rb.velocity = movement;//获取输入，如果有输入就正常
         }
         else if(movement.sqrMagnitude > 0.01f)
         {
@@ -44,8 +47,10 @@ public class PlayerControl : MonoBehaviour
         }
         else
         {
+            movement = Vector2.zero;
             rb.velocity = Vector2.zero;
         }
+        TransferDataToAnimator(movement.x, movement.y, movement.sqrMagnitude);
     }
     /// <summary>
     /// 玩家八个方向移动移动
@@ -61,11 +66,20 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKey(KeyCode.D) && Input.GetKey(KeyCode.A)) movement.x = 0;
         movement.Normalize();
         movement*=speed;
+        
         rb.velocity = movement;
-
+        TransferDataToAnimator(movement.x,movement.y,movement.sqrMagnitude);
 
     }
-
+/// <summary>
+/// 传递数值给动画组件
+/// </summary>
+    void TransferDataToAnimator(float horizontal,float vertical,float speed)
+    {
+        animator.SetFloat("Horizontal", horizontal);
+        animator.SetFloat("Vertical", vertical);
+        animator.SetFloat("Speed", speed);
+    }
     void OnTriggerEnter2D(Collider2D other)
     {
         switch (other.gameObject.tag)
@@ -105,7 +119,7 @@ public class PlayerControl : MonoBehaviour
                 break;
         }
     }
-    void InteractWithNPC()
+    void InteractWithObject()
     {
         if (Input.GetKeyDown(KeyCode.E) && target != null)
         {
