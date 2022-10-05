@@ -13,7 +13,7 @@ public class MazeRegion : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     { 
         if (other.CompareTag("Player")){
-            finalPos.z = -10;
+            finalPos.z = -12;
         }
     }
     void OnTriggerExit2D(Collider2D other)
