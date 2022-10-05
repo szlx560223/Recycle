@@ -6,24 +6,21 @@ public class MazeRegion : MonoBehaviour
 {
     private Vector3 finalPos = new Vector3(0,0,-1);
     private Vector3 currentPos = new Vector3(0, 0, 0);
-
     public float moveSpeed = 5f;//移动位置
-    private Transform cam;//相机节点
+    private Transform cam = Camera.main.transform;//相机节点
     private float currentZ; //与屏幕的距离
 
     void OnTriggerEnter2D(Collider2D other)
-    {
-        finalPos.z = -4;
+    { 
         if (other.CompareTag("Player")){
-            cam = other.transform.GetChild(0);
+            finalPos.z = -7;
         }
     }
     void OnTriggerExit2D(Collider2D other)
     {
-        finalPos.z = -1;
         if (other.CompareTag("Player"))
         {
-            cam = other.transform.GetChild(0);
+            finalPos.z = -3;
         }
     }
     void Start()

@@ -19,7 +19,7 @@ public class RubbishBin : NPCControl
     {
         if (PlayerBackpack.instacne.isBackpackEmpty()) 
         {
-            Debug.Log("Empty Backpack");
+            //Debug.Log("Empty Backpack");
             return false; 
         }
         (string, ItemType) info = PlayerBackpack.instacne.getFirstInBackpack();
@@ -41,7 +41,7 @@ public class RubbishBin : NPCControl
     public void ThrowCorrectRubbish()
     {
         PlayerBackpack.instacne.RemoveFromBackpack();
-        Debug.Log("Throw a correct garbage");
+        //Debug.Log("Throw a correct garbage");
         PlayerControl.instance.pickedGarbageCount++;
     }
     /// <summary>
@@ -50,7 +50,7 @@ public class RubbishBin : NPCControl
     /// <param name="info">丢的垃圾</param>
     public void ThrowWrongRubbish((string, ItemType) info)
     {
-        Debug.Log("Throw a wrong garbage");
+        //Debug.Log("Throw a wrong garbage");
         TextManager.instance.SetText("normal", "这个垃圾不应该放在这里喔,"+info.Item1+"不是"+gameObject.name+"垃圾");
     }
     /// <summary>

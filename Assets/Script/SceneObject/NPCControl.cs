@@ -10,6 +10,6 @@ public class NPCControl : MonoBehaviour
     /// </summary>
     virtual public void InteractActivity()
     {
-        Debug.Log("Interact with " + gameObject.name);
+        //Debug.Log("Interact with " + gameObject.name);
     }
 }

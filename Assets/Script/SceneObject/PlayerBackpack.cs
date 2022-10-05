@@ -32,7 +32,7 @@ public class PlayerBackpack : MonoBehaviour
         backpackItem.Add(info);//加入到背包列表
         other.SetActive(false);
         allSlots[backpackItem.Count-1].gameObject.GetComponent<Image>().sprite = Resources.Load("Texture/Item/" + backpackItem[backpackItem.Count - 1].Item1, typeof(Sprite)) as Sprite;
-        Debug.Log(backpackItem);
+        //Debug.Log(backpackItem);
         return true;
     }
     /// <summary>
@@ -49,7 +49,7 @@ public class PlayerBackpack : MonoBehaviour
         allSlots[backpackItem.Count - 1].gameObject.GetComponent<Image>().sprite = Resources.Load("Texture/Item/Empty", typeof(Sprite)) as Sprite;
         (string, ItemType) info = getFirstInBackpack();
         backpackItem.RemoveAt(0);
-        Debug.Log(backpackItem);
+        //Debug.Log(backpackItem);
         return info;
     }
     /// <summary>

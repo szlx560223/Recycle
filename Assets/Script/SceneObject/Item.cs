@@ -9,7 +9,7 @@ public class Item : MonoBehaviour
 
     void Start()
     {
-        if (!setTexture()) Debug.Log(itemName + "texture load failed");
+        //if (!setTexture()) Debug.Log(itemName + "texture load failed");
     }
     /// <summary>
     /// 设置物品贴图

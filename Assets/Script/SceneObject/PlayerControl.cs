@@ -111,7 +111,7 @@ public class PlayerControl : MonoBehaviour
                 {
                     isBusy = true;
                     other.gameObject.transform.GetChild(0).gameObject.SetActive(true);
-                    Debug.Log("Hit " + other.gameObject.name);
+                    //Debug.Log("Hit " + other.gameObject.name);
                     target = other.gameObject;
                 }
                 break;
@@ -127,7 +127,7 @@ public class PlayerControl : MonoBehaviour
             case "Aunt":
                 isBusy = false;
                 other.gameObject.transform.GetChild(0).gameObject.SetActive(false);
-                Debug.Log("Leave " + other.gameObject.name);
+                //Debug.Log("Leave " + other.gameObject.name);
                 if (target == other.gameObject)
                     target = null;
 
