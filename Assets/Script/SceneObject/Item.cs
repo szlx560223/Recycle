@@ -4,7 +4,7 @@ using UnityEngine;
 public class Item : MonoBehaviour
 {
 
-    public String itemName = "";
+    public string itemName = "";
     public ItemType itemType = ItemType.Other;
 
     void Start()
@@ -29,7 +29,7 @@ public class Item : MonoBehaviour
     /// 返回物品名字，不建议单独使用
     /// </summary>
     /// <returns>物品名字</returns>
-    public String getName()
+    public string getName()
     {
         return itemName;
     }
@@ -45,7 +45,7 @@ public class Item : MonoBehaviour
     /// 返回物品信息元组
     /// </summary>
     /// <returns>前一个是名字，后一个是类型</returns>
-    public (String,ItemType) GetInfo()
+    public (string,ItemType) GetInfo()
     {
         return (itemName,itemType);
     }

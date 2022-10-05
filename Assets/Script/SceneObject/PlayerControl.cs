@@ -134,6 +134,9 @@ public class PlayerControl : MonoBehaviour
                 break;
         }
     }
+    /// <summary>
+    /// 与物体交互
+    /// </summary>
     void InteractWithObject()
     {
         if (Input.GetKeyDown(KeyCode.E) && target != null)
@@ -149,6 +152,10 @@ public class PlayerControl : MonoBehaviour
             }
         }
     }
+    /// <summary>
+    /// 判断游戏是否结束
+    /// </summary>
+    /// <returns></returns>
     bool isGameEnd()
     {
         if (pickedGarbageCount == itemCount)

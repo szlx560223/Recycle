@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class Aunt : NPCControl
 {
-    public int dialogToTrigger = 1;
-    bool isInteracted = false;
-    public List<GameObject> airWalls;
+
+    public int dialogToTrigger = 1;// 即将触发的对话组编号
+    bool isInteracted = false;//是否已经交互过
+    public List<GameObject> airWalls;//对话后会被解除的空气墙
+    /// <summary>
+    /// 交互行为
+    /// </summary>
     override public void InteractActivity()
     {
-        
         for(int i = 0; i < airWalls.Count; i++)
         {
             if (airWalls.Count == 0) break;
@@ -25,6 +28,9 @@ public class Aunt : NPCControl
             transform.GetChild(0).gameObject.SetActive(true);
         }
     }
+    /// <summary>
+    /// 打开对话框
+    /// </summary>
     void openDialogPanel() {
         if (!isInteracted)
         {

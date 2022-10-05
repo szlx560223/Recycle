@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class AirWall : MonoBehaviour
 {
-    public string notice = "那位阿姨看起来在等你和她说话..";
+    
+
+    public string notice = "那位阿姨看起来在等你和她说话..";// 撞到墙上的提示
     private void OnCollisionEnter2D(Collision2D other)
     {
         TextManager.instance.SetText("normal", notice);

@@ -6,8 +6,8 @@ using UnityEngine.UI;
 ///<summary>物品栏的最大数量</summary>
 public class PlayerBackpack : MonoBehaviour
 {
-    private int maxItem = 4;
-    List<(String, ItemType)> backpackItem = new List<(String,ItemType)>();
+    private int maxItem = 4;//背包物品上限
+    List<(string, ItemType)> backpackItem = new List<(string, ItemType)>();
     public static PlayerBackpack instacne;
     [Header("物品栏的父节点")]
     public Transform backpackGUI;
@@ -28,7 +28,7 @@ public class PlayerBackpack : MonoBehaviour
     public bool AddToBackpack(GameObject other)
     {
         if (isBackpackFull()) return false;
-        (String, ItemType) info = other.GetComponent<Item>().GetInfo();
+        (string, ItemType) info = other.GetComponent<Item>().GetInfo();
         backpackItem.Add(info);//加入到背包列表
         other.SetActive(false);
         allSlots[backpackItem.Count-1].gameObject.GetComponent<Image>().sprite = Resources.Load("Texture/Item/" + backpackItem[backpackItem.Count - 1].Item1, typeof(Sprite)) as Sprite;
@@ -39,7 +39,7 @@ public class PlayerBackpack : MonoBehaviour
     /// 从背包里移除物品
     /// </summary>
     /// <returns>被移除的物品，没有则返回Null</returns>
-    public (String,ItemType) RemoveFromBackpack()
+    public (string,ItemType) RemoveFromBackpack()
     {
         if (isBackpackEmpty()) return("Null",ItemType.Null);
         for(int i = 0; i < backpackItem.Count-1; i++)
@@ -47,7 +47,7 @@ public class PlayerBackpack : MonoBehaviour
             allSlots[i].gameObject.GetComponent<Image>().sprite = allSlots[i + 1].gameObject.GetComponent<Image>().sprite;
         }
         allSlots[backpackItem.Count - 1].gameObject.GetComponent<Image>().sprite = Resources.Load("Texture/Item/Empty", typeof(Sprite)) as Sprite;
-        (String, ItemType) info = getFirstInBackpack();
+        (string, ItemType) info = getFirstInBackpack();
         backpackItem.RemoveAt(0);
         Debug.Log(backpackItem);
         return info;
@@ -74,7 +74,7 @@ public class PlayerBackpack : MonoBehaviour
     /// 返回背包里第一个物品
     /// </summary>
     /// <returns>第一个物品（即将被丢出），没有则返回Null</returns>
-    public (String, ItemType) getFirstInBackpack()
+    public (string, ItemType) getFirstInBackpack()
     {
         if(isBackpackEmpty()) return ("Null", ItemType.Null);
         return backpackItem[0];
