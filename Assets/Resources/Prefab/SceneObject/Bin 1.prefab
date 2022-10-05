@@ -55,7 +55,7 @@ PrefabInstance:
     - target: {fileID: 5432968213637351007, guid: 29e184365652a02428e92274db604e20,
         type: 3}
       propertyPath: m_Name
-      value: Harmful
+      value: "\u6709\u5BB3"
       objectReference: {fileID: 0}
     - target: {fileID: 6712046260847806771, guid: 29e184365652a02428e92274db604e20,
         type: 3}
@@ -141,7 +141,7 @@ PrefabInstance:
     - target: {fileID: 5432968213637351007, guid: 29e184365652a02428e92274db604e20,
         type: 3}
       propertyPath: m_Name
-      value: Other
+      value: "\u5176\u4ED6"
       objectReference: {fileID: 0}
     - target: {fileID: 6712046260847806771, guid: 29e184365652a02428e92274db604e20,
         type: 3}
@@ -227,7 +227,7 @@ PrefabInstance:
     - target: {fileID: 5432968213637351007, guid: 29e184365652a02428e92274db604e20,
         type: 3}
       propertyPath: m_Name
-      value: Recyclable
+      value: "\u53EF\u56DE\u6536"
       objectReference: {fileID: 0}
     - target: {fileID: 6712046260847806771, guid: 29e184365652a02428e92274db604e20,
         type: 3}
@@ -313,7 +313,7 @@ PrefabInstance:
     - target: {fileID: 5432968213637351007, guid: 29e184365652a02428e92274db604e20,
         type: 3}
       propertyPath: m_Name
-      value: Kitchen
+      value: "\u53A8\u4F59"
       objectReference: {fileID: 0}
     - target: {fileID: 6712046260847806771, guid: 29e184365652a02428e92274db604e20,
         type: 3}

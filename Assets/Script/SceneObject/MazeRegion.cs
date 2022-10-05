@@ -34,7 +34,6 @@ public class MazeRegion : MonoBehaviour
     }
     void Update()
     {
-        Debug.Log(currentZ);
         if(cam != null)
         {
             currentZ = Mathf.MoveTowards(currentZ, finalPos.z, Time.deltaTime * moveSpeed);

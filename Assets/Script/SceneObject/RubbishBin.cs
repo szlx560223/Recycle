@@ -27,7 +27,7 @@ public class RubbishBin : NPCControl
         }
         else
         {
-            ThrowWrongRubbish();
+            ThrowWrongRubbish(info);
             return false;
         }
         
@@ -38,9 +38,10 @@ public class RubbishBin : NPCControl
         Debug.Log("Throw a correct garbage");
         PlayerControl.instance.pickedGarbageCount++;
     }
-    public void ThrowWrongRubbish()
+    public void ThrowWrongRubbish((String, ItemType) info)
     {
         Debug.Log("Throw a wrong garbage");
+        TextManager.instance.SetText("normal", "这个垃圾不应该放在这里喔,"+info.Item1+"不是"+gameObject.name+"垃圾");
     }
     public bool isItemTypeMatch(ItemType itemType)
     {
