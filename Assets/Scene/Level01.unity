@@ -661,7 +661,7 @@ PrefabInstance:
     - target: {fileID: 3535673528899847686, guid: 40ab1bcde6d111d4cb0feffa83c5db1d,
         type: 3}
       propertyPath: itemName
-      value: red
+      value: "\u7535\u6C60"
       objectReference: {fileID: 0}
     - target: {fileID: 3535673528899847686, guid: 40ab1bcde6d111d4cb0feffa83c5db1d,
         type: 3}
@@ -968,6 +968,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dialog
       objectReference: {fileID: 0}
+    - target: {fileID: 4105138197728925467, guid: 521cffbbe248bbb4f954ebfd67fdab03,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 521cffbbe248bbb4f954ebfd67fdab03, type: 3}
 --- !u!1 &732416820
@@ -1037,6 +1042,8 @@ GameObject:
   m_Component:
   - component: {fileID: 758170792}
   - component: {fileID: 758170793}
+  - component: {fileID: 758170795}
+  - component: {fileID: 758170794}
   m_Layer: 0
   m_Name: maze
   m_TagString: Untagged
@@ -1106,6 +1113,45 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &758170794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758170791}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9af1f8bf070cb0245a5ebceeccfa28ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 5
+--- !u!61 &758170795
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 758170791}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.1, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.81, y: 0.81}
+    newSize: {x: 0.81, y: 0.81}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.9, y: 0.81}
+  m_EdgeRadius: 0
 --- !u!1 &759192773
 GameObject:
   m_ObjectHideFlags: 0
@@ -1971,7 +2017,7 @@ PrefabInstance:
     - target: {fileID: 3535673528899847686, guid: 40ab1bcde6d111d4cb0feffa83c5db1d,
         type: 3}
       propertyPath: itemName
-      value: blue
+      value: "\u5377\u7EB8"
       objectReference: {fileID: 0}
     - target: {fileID: 3535673528899847686, guid: 40ab1bcde6d111d4cb0feffa83c5db1d,
         type: 3}
@@ -2334,6 +2380,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1947306855}
   - component: {fileID: 1947306854}
+  - component: {fileID: 1947306856}
   m_Layer: 0
   m_Name: Wall (8)
   m_TagString: Untagged
@@ -2381,6 +2428,19 @@ Transform:
   m_Father: {fileID: 254764963}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1947306856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947306853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae77ac7e172f2547b6088b52e5e1d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notice: "\u90A3\u4F4D\u963F\u59E8\u770B\u8D77\u6765\u5728\u7B49\u4F60\u548C\u5979\u8BF4\u8BDD.."
 --- !u!1 &1984398013
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,9 @@ public class TextManager : MonoBehaviour
 {
     public static TextManager instance;
     private GameObject panel;//面板
-    private Text Text;//文本组件
+    public Text Text;//文本组件
+    public Image Name;//说话的人名
+    public Image Speaker;//说话的人
     private List<(string name,string text)> textList = new List<(string name, string text)>();//对话列表，所有的对话都会加载到这个列表里
 
     void Start()
@@ -16,7 +18,6 @@ public class TextManager : MonoBehaviour
         instance = this;
         panel = gameObject;
         panel.SetActive(false);
-        Text = panel.transform.GetChild(0).GetComponent<Text>();
     }
     void Update()
     {
@@ -60,8 +61,23 @@ public class TextManager : MonoBehaviour
     /// <param name="text">内容</param>
     public void ShowText(string name, string text)
     {
-/*        panel.GetComponent<Image>().sprite = Resources.Load("" + name, typeof(Sprite)) as Sprite;*/
-        Text.text = name+"  "+text;
+        //设置对话框、名字与头像
+        switch (name) 
+        {
+            case "aunt":
+            case "self":
+                panel.GetComponent<Image>().sprite = Resources.Load("Texture/UI/dialog/panel1", typeof(Sprite)) as Sprite;
+                Name.sprite = Resources.Load("Texture/UI/dialog/Name_"+name, typeof(Sprite)) as Sprite;
+                Speaker.sprite = Resources.Load("Texture/UI/dialog/Speaker_" + name, typeof(Sprite)) as Sprite;
+                break;
+            default:
+                panel.GetComponent<Image>().sprite = Resources.Load("Texture/UI/dialog/panel2", typeof(Sprite)) as Sprite;
+                Name.sprite = Resources.Load("Texture/UI/dialog/Empty", typeof(Sprite)) as Sprite;
+                Speaker.sprite = Resources.Load("Texture/UI/dialog/Empty", typeof(Sprite)) as Sprite;
+                break;
+        }
+        //设置文本
+        Text.text = text;
     }
     /// <summary>
     /// 设置对话框文本

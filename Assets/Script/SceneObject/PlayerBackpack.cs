@@ -17,8 +17,8 @@ public class PlayerBackpack : MonoBehaviour
     {
         instacne = this;
         allSlots = new Transform[maxItem];
-        for (int i = 0; i < maxItem; i++)
-            allSlots[i]=backpackGUI.GetChild(i);
+        for (int i = 2; i < maxItem+2; i++)//前两个是背景板，所以i从2开始
+            allSlots[i-2]=backpackGUI.GetChild(i);
     }
     /// <summary>
     /// 向背包里添加物体

@@ -139,7 +139,7 @@ public class PlayerControl : MonoBehaviour
     /// </summary>
     void InteractWithObject()
     {
-        if (Input.GetKeyDown(KeyCode.E) && target != null)
+        if (Input.GetKeyDown(KeyCode.F) && target != null)
         {
             switch (target.tag)
             {
