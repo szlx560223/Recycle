@@ -735,6 +735,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notice: "\u54A6\uFF1F\u5783\u573E\u6876\u5462\uFF1F"
+  name: normal
   triggerOnce: 1
 --- !u!1 &217335204
 GameObject:
@@ -1736,6 +1737,7 @@ GameObject:
   m_Component:
   - component: {fileID: 436571029}
   - component: {fileID: 436571030}
+  - component: {fileID: 436571031}
   m_Layer: 0
   m_Name: airwall (4)
   m_TagString: Untagged
@@ -1783,6 +1785,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 50}
   m_EdgeRadius: 0
+--- !u!114 &436571031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 436571028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae77ac7e172f2547b6088b52e5e1d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notice: "\u540E\u9762\u7684\u533A\u57DF\u4EE5\u540E\u518D\u6765\u63A2\u7D22\u5427\uFF1F"
+  name: normal
+  triggerOnce: 0
 --- !u!1 &473782760
 GameObject:
   m_ObjectHideFlags: 0
@@ -3491,6 +3508,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1395723155}
   - component: {fileID: 1395723156}
+  - component: {fileID: 1395723157}
   m_Layer: 0
   m_Name: airwall (3)
   m_TagString: Untagged
@@ -3538,6 +3556,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5, y: 50}
   m_EdgeRadius: 0
+--- !u!114 &1395723157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1395723154}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ae77ac7e172f2547b6088b52e5e1d35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notice: "\u524D\u9762\u7684\u533A\u57DF\u4EE5\u540E\u518D\u6765\u63A2\u7D22\u5427\uFF1F"
+  name: normal
+  triggerOnce: 0
 --- !u!1001 &1400147511
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3930,6 +3963,66 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894665554714802013, guid: fd61d1d5282129e4aa0951343967e432,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894665554714802013, guid: fd61d1d5282129e4aa0951343967e432,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894665554714802013, guid: fd61d1d5282129e4aa0951343967e432,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.24
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894665555695632442, guid: fd61d1d5282129e4aa0951343967e432,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894665555695632442, guid: fd61d1d5282129e4aa0951343967e432,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894665555695632442, guid: fd61d1d5282129e4aa0951343967e432,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894665555697853822, guid: fd61d1d5282129e4aa0951343967e432,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894665555697853822, guid: fd61d1d5282129e4aa0951343967e432,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894665555697853822, guid: fd61d1d5282129e4aa0951343967e432,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894665556152545931, guid: fd61d1d5282129e4aa0951343967e432,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894665556152545931, guid: fd61d1d5282129e4aa0951343967e432,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4894665556152545931, guid: fd61d1d5282129e4aa0951343967e432,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.73
       objectReference: {fileID: 0}
     - target: {fileID: 7155751621048358988, guid: fd61d1d5282129e4aa0951343967e432,
         type: 3}
@@ -5132,7 +5225,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ae77ac7e172f2547b6088b52e5e1d35, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  notice: "\u90A3\u4F4D\u963F\u59E8\u770B\u8D77\u6765\u5BF9\u4F60\u5F88\u6709\u5174\u8DA3.."
+  notice: "\u90A3\u4F4D\u963F\u59E8\u4E00\u76F4\u5728\u770B\u7740\u4F60.."
+  name: normal
   triggerOnce: 0
 --- !u!61 &2102060771
 BoxCollider2D:

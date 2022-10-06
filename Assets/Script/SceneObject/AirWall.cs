@@ -7,6 +7,7 @@ public class AirWall : MonoBehaviour
     
 
     public string notice = "那位阿姨看起来在等你和她说话..";// 撞到墙上的提示
+    public string name = "normal";
     public bool triggerOnce = false;
     private bool notAgain = false;
     private void OnCollisionEnter2D(Collision2D other)
@@ -15,13 +16,13 @@ public class AirWall : MonoBehaviour
         {
             if (!notAgain)
             {
-                TextManager.instance.SetText("normal", notice);
+                TextManager.instance.SetText(name, notice);
             }
             notAgain = true;
         }
         else
         {
-            TextManager.instance.SetText("normal", notice);
+            TextManager.instance.SetText(name, notice);
         }
         
     }
@@ -31,13 +32,13 @@ public class AirWall : MonoBehaviour
         {
             if (!notAgain)
             {
-                TextManager.instance.SetText("normal", notice);
+                TextManager.instance.SetText(name, notice);
             }
             notAgain = true;
         }
         else
         {
-            TextManager.instance.SetText("normal", notice);
+            TextManager.instance.SetText(name, notice);
         }
     }
 }

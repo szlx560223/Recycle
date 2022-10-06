@@ -38,7 +38,7 @@ public class Aunt : NPCControl
         }
         else
         {
-            TextManager.instance.SetText("aunt", "你还有啥问的吗？年轻人就应该多干点活！");
+            TextManager.instance.SetText("aunt", "垃圾分好了吗？要把*所有垃圾*分类对喔");
         }
             
     }
